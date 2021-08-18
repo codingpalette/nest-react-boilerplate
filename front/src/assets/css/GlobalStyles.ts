@@ -4,6 +4,10 @@ import { normalize } from 'styled-normalize';
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   
+  html{
+    font-size: 14px;
+  }
+  
   body{
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   }
