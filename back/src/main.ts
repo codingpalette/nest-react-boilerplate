@@ -5,12 +5,18 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
+import { HttpExceptionFilter } from './http-exception.filter';
+
 declare const module: any;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.useGlobalFilters(new HttpExceptionFilter());
+
+  app.setGlobalPrefix('api');
   const config = new DocumentBuilder()
+    .setBasePath('api')
     .setTitle('보일플레이트 API')
     .setDescription('보일플레이트 개발을 위한 API 문서 입니다.')
     .setVersion('1.0')
@@ -18,6 +24,11 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document);
+
+  app.enableCors({
+    origin: true,
+    credentials: true,
+  });
 
   app.use(cookieParser());
   if (process.env.NODE_ENV === 'production') {
@@ -48,7 +59,6 @@ async function bootstrap() {
   app.use(passport.session());
 
   const PORT = 4000;
-  app.setGlobalPrefix('api');
   await app.listen(PORT);
   console.log(process.env.COOKIE_SECRET);
   console.log(`server listening on port ${PORT}`);

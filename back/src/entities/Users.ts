@@ -16,6 +16,10 @@ export class Users {
   @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
+  @Index({ unique: true })
+  @Column('varchar', { name: 'email', nullable: true, length: 30 })
+  email: string;
+
   @Column('varchar', { name: 'nickname', nullable: true, length: 30 })
   nickname: string;
 
