@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
   ${normalize}
   
   html{
-    font-size: 14px;
+    font-size: 16px;
   }
   
   body{
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * {
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
 `;
 

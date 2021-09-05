@@ -9,7 +9,6 @@ export const ButtonBox = styled.button<{
 }>`
   width: ${(props) => props.width};
   ${(props) => props.loadingActive && tw`cursor-default pointer-events-none opacity-75`};
-  padding: 14px 20px;
   color: #fff;
   ${(props) =>
     // eslint-disable-next-line no-nested-ternary

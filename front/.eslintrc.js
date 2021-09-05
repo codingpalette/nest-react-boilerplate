@@ -43,5 +43,6 @@ module.exports = {
     'eslint-disable-next-line': 0,
     'global-require': 0,
     'eslint-disable-next-line no-nested-ternary': 0,
+    'jsx-a11y/label-has-associated-control': 0,
   },
 };

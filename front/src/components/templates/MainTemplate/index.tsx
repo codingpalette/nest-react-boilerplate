@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../../base/Header';
 
-export type MainTemplate = {
+export type MainTemplateProps = {
   /** 안의 내용 */
   children: React.ReactNode;
 };
 
-const MainTemplate = ({ children }: MainTemplate) => {
+const MainTemplate = ({ children }: MainTemplateProps) => {
   return (
     <>
       <Header />

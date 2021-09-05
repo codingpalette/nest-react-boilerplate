@@ -5,6 +5,14 @@ import Logo from '../../../assets/images/logo.svg';
 import Button from '../../common/Button';
 
 const Header = () => {
+  const aa = () => {
+    const cc = 1;
+    if (cc === 1) {
+      console.log('11');
+    } else {
+      console.log('22');
+    }
+  };
   return (
     <>
       <HeaderBox className="w-full border-solid border-b border-gray-100">
@@ -14,9 +22,9 @@ const Header = () => {
               <img src={Logo} alt="로고" />
             </Link>
           </div>
-          <div className="btn_box">
-            <Link to="/">
-              <Button>로그인</Button>
+          <div className="ml-auto btn_box">
+            <Link to="/login">
+              <Button>Login</Button>
             </Link>
           </div>
         </div>

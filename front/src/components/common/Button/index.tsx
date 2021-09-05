@@ -25,7 +25,7 @@ const Button = ({ children, onClick, loading, color, className, type, width, dis
     <ButtonBox
       className={`${
         className || ''
-      } rounded-lg font-medium tracking-wider transform hover:-translate-y-1 transition duration-200 ease-in-out flex focus:outline-none`}
+      } rounded-lg font-medium tracking-wider transform py-2 px-4 text-sm hover:bg-opacity-90 transition duration-200 ease-in-out flex focus:outline-none`}
       onClick={onClick}
       type={type}
       color={color}
